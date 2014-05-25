@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run -a stdin -a stdout -e STREAM=1 --rm pageres $* | tar -xzf - --strip-components 1

@@ -5,7 +5,7 @@ if [[ -n $STREAM ]]; then
   cd /pageres/output
   pageres $* > pageres.log
   cd ..
-  tar -czf - output | base64
+  tar -czf - output | cat
 elif [[ -d /pageres/output ]]; then
   cd /pageres/output
   pageres $*

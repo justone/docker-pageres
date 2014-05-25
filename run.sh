@@ -3,9 +3,9 @@
 if [[ -n $STREAM ]]; then
   mkdir -p /pageres/output
   cd /pageres/output
-  pageres $* >&2
+  pageres $* > pageres.log
   cd ..
-  tar -czf - output
+  tar -czf - output | base64
 elif [[ -d /pageres/output ]]; then
   cd /pageres/output
   pageres $*

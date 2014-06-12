@@ -33,16 +33,16 @@ docker run -v `pwd`:/pageres/output --rm nate/pageres google.com 1600x900
 
 ### Without volumes:
 
-This will output the images as a tarball to stdout. The output from the pageres command will be in pageres.log in the tarball.
+This will output the images as a tarball to stdout.
 
 ```
-docker run -a stdin -a stdout -e STREAM=1 --rm nate/pageres google.com 1600x900 > output.tgz
+docker run -a stderr -a stdout -e STREAM=1 --rm nate/pageres google.com 1600x900 > output.tgz
 ```
 
 To replicate the 'with volumes' version without volumes, pipe to a tar command:
 
 ```
-docker run -a stdin -a stdout -e STREAM=1 --rm nate/pageres google.com 1600x900 | tar -xzf - --strip-components 1
+docker run -a stderr -a stdout -e STREAM=1 --rm nate/pageres google.com 1600x900 | tar -xzf - --strip-components 1
 ```
 
 # License

@@ -3,7 +3,7 @@
 if [[ -n $STREAM ]]; then
   mkdir -p /pageres/output
   cd /pageres/output
-  pageres $* > pageres.log
+  pageres $* 1>&2
   cd ..
   tar -czf - output | cat
 elif [[ -d /pageres/output ]]; then
